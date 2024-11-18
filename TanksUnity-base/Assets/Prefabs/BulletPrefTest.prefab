@@ -121,7 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 0.2
   _tower: {fileID: 0}
-  _damage: 10
+  _damage: 1
   _selfDestroyTime: 3
 --- !u!54 &5458349438021740673
 Rigidbody:

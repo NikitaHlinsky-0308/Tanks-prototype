@@ -6,7 +6,21 @@ namespace CodeBase
     public class GameManager : MonoBehaviour
     {
 
-        private void OnPlayerDead()
+        public static GameManager _instance;
+
+        void Awake()
+        {
+            if (_instance == null)
+            {
+                _instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        public void OnPlayerDead()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }

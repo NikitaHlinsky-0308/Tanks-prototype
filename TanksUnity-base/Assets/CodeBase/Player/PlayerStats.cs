@@ -26,12 +26,12 @@ namespace CodeBase.Player
         public void TakeDamage(int amount)
         {
             if (amount < _health) _health -= amount;
-            else if (amount > _health)
+            else if (amount >= _health)
             {
                 _health = 0;
                 Died();
             }
-            Debug.Log(_health);
+            
         }
 
         public void Heal(int amount)
@@ -46,7 +46,7 @@ namespace CodeBase.Player
 
         public void Died()
         {
-            Debug.Log("You are dead!");
+            GameManager._instance.OnPlayerDead();
         }
 
         public void DamegeBuff()
